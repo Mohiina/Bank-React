@@ -51,23 +51,19 @@ class App extends Component {
     });
   };
 
-  addDebit = (event) => {
-    event.preventDefault();
-    
-    const description = event.target.description.value;
-    const amount = parseFloat(event.target.amount.value);
-  
+  addDebit = (description, amount) => {
     const newDebit = {
       description: description,
-      amount: amount,
+      amount: parseFloat(amount),
       date: new Date().toISOString(),
     };
   
     this.setState((prevState) => ({
       debitList: [...prevState.debitList, newDebit],
-      accountBalance: prevState.accountBalance - amount
+      accountBalance: prevState.accountBalance - newDebit.amount
     }));
   };
+  
   
 
 
