@@ -40,6 +40,8 @@ const Debits = (props) => {
     <div>
       <h1>Debits</h1>
 
+      <h3>Account Balance: {props.accountBalance}</h3>
+
       <form onSubmit={handleSubmit}>
 
       <input 
