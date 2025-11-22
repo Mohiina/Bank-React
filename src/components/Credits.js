@@ -46,7 +46,6 @@ const Credits = (props) => {
 
       <br/>
       <Link to="/">Return to Home</Link>
-      // show all credits
       <ul>
         {props.credits.map((credit, index) => (
           <li key={index}>
