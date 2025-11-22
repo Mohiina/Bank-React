@@ -52,18 +52,18 @@ class App extends Component {
   };
 
   addDebit = (description, amount) => {
-    const newDebit = {
-      description: description,
-      amount: parseFloat(amount),
-      date: new Date().toISOString(),
-    };
-  
-    this.setState((prevState) => ({
-      debitList: [...prevState.debitList, newDebit],
-      accountBalance: prevState.accountBalance - newDebit.amount
-    }));
+  const newDebit = {
+    description: description,
+    amount: parseFloat(amount),
+    date: new Date().toISOString(),
   };
-  
+
+  this.setState((prevState) => ({
+    debitList: [...prevState.debitList, newDebit],
+    accountBalance: prevState.accountBalance - newDebit.amount
+  }));
+};
+
   
 
 
