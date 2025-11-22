@@ -33,4 +33,8 @@ const Debits = (props) => {
   );
 }
 
+Debits.defaultProps = {
+  debits: []
+};
+
 export default Debits;

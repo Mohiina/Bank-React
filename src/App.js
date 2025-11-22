@@ -35,7 +35,7 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
-  // Add this inside App component (under mockLogIn)
+  
   addCredit = (description, amount) => {
     const newCredit = {
       description: description,
@@ -50,6 +50,25 @@ class App extends Component {
       accountBalance: this.state.accountBalance + newCredit.amount
     });
   };
+
+  addDebit = (event) => {
+    event.preventDefault();
+    
+    const description = event.target.description.value;
+    const amount = parseFloat(event.target.amount.value);
+  
+    const newDebit = {
+      description: description,
+      amount: amount,
+      date: new Date().toISOString(),
+    };
+  
+    this.setState((prevState) => ({
+      debitList: [...prevState.debitList, newDebit],
+      accountBalance: prevState.accountBalance - amount
+    }));
+  };
+  
 
 
   // Create Routes and React elements to be rendered using React components
@@ -69,7 +88,14 @@ class App extends Component {
       />
     );
     
-    const DebitsComponent = () => (<Debits debits={this.state.debitList} />) 
+    const DebitsComponent = () => (
+      <Debits 
+        debits={this.state.debitList}
+        addDebit={this.addDebit}
+        accountBalance={this.state.accountBalance}
+      />
+    );
+    
 
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
     return (
