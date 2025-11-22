@@ -52,20 +52,45 @@ class App extends Component {
   };
 
   addDebit = (description, amount) => {
-  const newDebit = {
-    description: description,
-    amount: parseFloat(amount),
-    date: new Date().toISOString(),
+    const newDebit = {
+      description: description,
+      amount: parseFloat(amount),
+      date: new Date().toISOString(),
+    };
+  
+    this.setState((prevState) => ({
+      debitList: [...prevState.debitList, newDebit],
+      accountBalance: prevState.accountBalance - newDebit.amount
+    }));
   };
-
-  this.setState((prevState) => ({
-    debitList: [...prevState.debitList, newDebit],
-    accountBalance: prevState.accountBalance - newDebit.amount
-  }));
-};
+  
+  
+  async componentDidMount() {
+    //fetch Debits
+    const debitUrl = "https://johnnylaicode.github.io/api/debits.json";
+    const debitResponse = await fetch(debitUrl);
+    const debitData = await debitResponse.json();
+  
+    // fetch Credits
+    const creditUrl = "https://johnnylaicode.github.io/api/credits.json";
+    const creditResponse = await fetch(creditUrl);
+    const creditData = await creditResponse.json();
+  
+    // calc new acc balance
+    const totalDebits = debitData.reduce((sum, item) => sum + item.amount, 0);
+    const totalCredits = creditData.reduce((sum, item) => sum + item.amount, 0);
+  
+    const newBalance = totalCredits - totalDebits;
 
   
-
+    //update state
+    this.setState({
+      debitList: debitData,
+      creditList: creditData,
+      accountBalance: newBalance
+    });
+  }
+  
 
   // Create Routes and React elements to be rendered using React components
   render() {  
