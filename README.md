@@ -164,22 +164,23 @@ Bank-React/
 1. **Clone the repository**
 
 git clone https://github.com/Mohiina/Bank-React.git
-
+```
 cd bank-of-react
-
+```
 2. Install dependencies
-
+```
 npm install
-
+```
 3. Install specific React Router version (if needed)
-
+```
 npm install react-router-dom@5.3.0 react-router@5.2.1
+
 npm install react-scripts@latest --legacy-peer-deps
-
+```
 4. Start the application
-
+```
 npm start
-
+```
 5. Open http://localhost:3000 in your browser.
 
 
