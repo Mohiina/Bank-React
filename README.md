@@ -99,32 +99,60 @@ The app is deployed on GitHub Pages:
 ## Project Structure
 
 Bank-React/
+
 ├─ node_modules/
+
 ├─ public/
+
 │ ├─ favicon.ico
+
 │ ├─ index.html
+
 │ ├─ logo192.png
+
 │ ├─ logo512.png
+
 │ ├─ manifest.json
+
 │ └─ robots.txt
+
 ├─ src/
+
 │ ├─ components/
+
+
 │ │ ├─ AccountBalance.js
+
 │ │ ├─ Credits.js
+
 │ │ ├─ Debits.js
+
 │ │ ├─ Home.js
+
 │ │ ├─ Login.js
+
 │ │ └─ UserProfile.js
+
 │ ├─ App.js
+
 │ ├─ App.css
+
 │ ├─ App.test.js
+
 │ ├─ index.js
+
 │ ├─ index.css
+
 │ ├─ logo.svg
+
 │ ├─ reportWebVitals.js
+
 │ └─ setupTests.js
+
 ├─ package.json
+
 ├─ package-lock.json
+
 └─ README.md
 
 
