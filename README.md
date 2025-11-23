@@ -163,7 +163,8 @@ Bank-React/
 
 1. **Clone the repository**
 
-git clone https://github.com/Mohiina/bank-of-react.git
+git clone https://github.com/Mohiina/Bank-React.git
+
 cd bank-of-react
 
 2. Install dependencies
