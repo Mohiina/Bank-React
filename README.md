@@ -3,6 +3,7 @@
 ## Student Information
 **Name:** Mokhinabonu Ubaydulloeva  
 **GitHub Username:** Mohiina  
+https://github.com/Mohiina/Bank-React
 Individual Project  
 
 ---
@@ -23,8 +24,7 @@ The application allows users to view and manage their account balance, credits, 
 
 ## Live Website
 The app is deployed on GitHub Pages:  
-[https://Mohiina.github.io/bank-of-react](https://Mohiina.github.io/bank-of-react)
-
+https://mohiina.github.io/Bank-React/
 ---
 
 ## Features
