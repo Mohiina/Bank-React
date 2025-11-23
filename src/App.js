@@ -39,7 +39,7 @@ class App extends Component {
   addCredit = (description, amount) => {
     const newCredit = {
       description: description,
-      amount: parseFloat(amount),
+      amount: parseFloat(parseFloat(amount).toFixed(2)),
       date: new Date().toISOString(),
     };
 
@@ -47,20 +47,20 @@ class App extends Component {
 
     this.setState({
       creditList: updatedCredits,
-      accountBalance: this.state.accountBalance + newCredit.amount
+      accountBalance: parseFloat((this.state.accountBalance + newCredit.amount).toFixed(2)) // round balance
     });
   };
 
   addDebit = (description, amount) => {
     const newDebit = {
       description: description,
-      amount: parseFloat(amount),
+      amount: parseFloat(parseFloat(amount).toFixed(2)),
       date: new Date().toISOString(),
     };
   
     this.setState((prevState) => ({
       debitList: [...prevState.debitList, newDebit],
-      accountBalance: prevState.accountBalance - newDebit.amount
+      accountBalance: parseFloat((prevState.accountBalance - newDebit.amount).toFixed(2)) // round balance
     }));
   };
   
