@@ -158,7 +158,6 @@ Bank-React/
 
 ---
 
-## Installation & Running Locally
 
 ## Installation & Running Locally
 
